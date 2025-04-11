@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore LogiPro's full suite of logistics services." />
+  <title>Our Services | LogiPro Logistics</title>
+  <link rel="stylesheet" href="services.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="container nav-container">
+    <div class="logo">LogiPro</div>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+    <nav class="nav-menu" id="nav-menu">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="client-portal.html">Client Portal</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Page Title Section -->
+<section class="page-header">
+  <div class="container">
+    <h1>Our Services</h1>
+    <p>Customized solutions to move your business forward.</p>
+  </div>
+</section>
+
+<!-- Services Grid -->
+<section class="section service-grid">
+  <div class="container">
+    <div class="services-grid">
+      <div class="service-card animate">
+        <i class="fas fa-shipping-fast service-icon"></i>
+        <h3>Freight Forwarding</h3>
+        <p>Reliable air, sea, and ground freight solutions with real-time tracking.</p>
+      </div>
+      <div class="service-card animate">
+        <i class="fas fa-warehouse service-icon"></i>
+        <h3>Warehousing</h3>
+        <p>Flexible warehousing options with security, scalability, and inventory control.</p>
+      </div>
+      <div class="service-card animate">
+        <i class="fas fa-globe service-icon"></i>
+        <h3>Cross-Border Logistics</h3>
+        <p>Navigate customs and regulations with ease using our global logistics network.</p>
+      </div>
+      <div class="service-card animate">
+        <i class="fas fa-boxes service-icon"></i>
+        <h3>Inventory Management</h3>
+        <p>Real-time visibility and streamlined control over your stock and fulfillment.</p>
+      </div>
+      <div class="service-card animate">
+        <i class="fas fa-headset service-icon"></i>
+        <h3>Customer Support</h3>
+        <p>Dedicated account managers and proactive communication 24/7.</p>
+      </div>
+      <div class="service-card animate">
+        <i class="fas fa-route service-icon"></i>
+        <h3>Route Optimization</h3>
+        <p>AI-powered route planning to reduce delivery time and cost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta">
+    <div class="container">
+      <h2>Let’s Optimize Your Logistics</h2>
+      <p>Talk to our team about a solution tailored to your business goals.</p>
+      <a href="#" class="btn cta-btn">Request a Free Quote</a>
+    </div>
+  </section>
+  
+
+<!-- Quote Request Section -->
+<section class="quote-section">
+  <div class="container">
+    <h2 class="section-title">Request a Custom Quote</h2>
+    <form class="quote-form">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="John Doe" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Business Email</label>
+        <input type="email" id="email" name="email" placeholder="you@company.com" required />
+      </div>
+      <div class="form-group">
+        <label for="service">Service Interested In</label>
+        <select id="service" name="service" required>
+          <option value="">-- Select a Service --</option>
+          <option value="freight">Freight Forwarding</option>
+          <option value="warehousing">Warehousing</option>
+          <option value="customs">Customs Clearance</option>
+          <option value="distribution">Distribution</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="details">Project Details</label>
+        <textarea id="details" name="details" rows="5" placeholder="Tell us about your logistics needs..." required></textarea>
+      </div>
+      <button type="submit" class="btn-primary">Submit Request</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 LogiPro Logistics. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Script -->
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+    hamburger.classList.toggle('active');
+  });
+
+  // Card animation on scroll
+  const cards = document.querySelectorAll('.animate');
+  const animateOnScroll = () => {
+    cards.forEach(card => {
+      const position = card.getBoundingClientRect().top;
+      const screenHeight = window.innerHeight;
+      if (position < screenHeight - 50) {
+        card.classList.add('show');
+      }
+    });
+  };
+  window.addEventListener('scroll', animateOnScroll);
+  window.addEventListener('load', animateOnScroll);
+</script>
+
+</body>
+</html>

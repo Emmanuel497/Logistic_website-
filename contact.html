@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Get in touch with LogiPro Logistics" />
+  <title>Contact Us | LogiPro Logistics</title>
+  <link rel="stylesheet" href="contact.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <div class="logo">LogiPro</div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-menu" id="nav-menu">
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="client-portal.html">Client Portal</a></li>
+            <li><a href="#">Blog</a></li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="section contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h4>Contact Information</h4>
+          <p><strong>Phone:</strong> +1 (800) 555-LOGI</p>
+          <p><strong>Email:</strong> support@logipro.com</p>
+          <p><strong>Hours:</strong> Mon–Fri, 9am–6pm</p>
+          <p><strong>Address:</strong> 123 Logistics Way, Transport City, TX</p>
+        </div>
+        <form class="contact-form" action="#" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Embed -->
+  <section class="map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019600529302!2d-122.41941568468115!3d37.77492977975862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064df6e0e55%3A0xd0020c2f094362b3!2sLogistics%20HQ!5e0!3m2!1sen!2sus!4v1612392345899!5m2!1sen!2sus"
+      width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 LogiPro Logistics. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

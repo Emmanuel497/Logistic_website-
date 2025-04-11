@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Insights, trends, and updates in logistics and supply chain." />
+  <title>LogiPro Blog</title>
+  <link rel="stylesheet" href="blog.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <div class="logo">LogiPro</div>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="client-portal.html">Client Portal</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blog Section -->
+  <main class="section blog">
+    <div class="container">
+      <h2 class="section-title">Logistics Insights & News</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>2025 Logistics Trends to Watch</h3>
+          <p>Discover how AI and automation are reshaping the logistics landscape and optimizing operations across the globe.</p>
+          <a href="#" class="btn-read">Read More</a>
+        </article>
+        <article class="card">
+          <h3>Smart Warehousing 101</h3>
+          <p>Best practices for implementing smart warehousing strategies and real-time inventory management systems.</p>
+          <a href="#" class="btn-read">Read More</a>
+        </article>
+        <article class="card">
+          <h3>Cross-Border Challenges</h3>
+          <p>How to navigate customs regulations, reduce transit delays, and improve international supply chain resilience.</p>
+          <a href="#" class="btn-read">Read More</a>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 LogiPro Logistics. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
