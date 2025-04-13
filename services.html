@@ -88,15 +88,25 @@
 <section class="quote-section">
   <div class="container">
     <h2 class="section-title">Request a Custom Quote</h2>
-    <form class="quote-form">
+    <form class="quote-form" action="https://formspree.io/f/mgvaddyz" method="POST" onsubmit="return showThankYou()">
+      <!-- Redirect to thank-you page after submit -->
+      <input type="hidden" name="_redirect" value="https://emmanuel497.github.io/Logistic_website-thank-you.html">
+
+
+      
+      <!-- Basic spam protection (honeypot) -->
+      <input type="text" name="_gotcha" style="display:none" />
+    
       <div class="form-group">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" placeholder="John Doe" required />
       </div>
+    
       <div class="form-group">
         <label for="email">Business Email</label>
         <input type="email" id="email" name="email" placeholder="you@company.com" required />
       </div>
+    
       <div class="form-group">
         <label for="service">Service Interested In</label>
         <select id="service" name="service" required>
@@ -108,12 +118,16 @@
           <option value="other">Other</option>
         </select>
       </div>
+    
       <div class="form-group">
         <label for="details">Project Details</label>
         <textarea id="details" name="details" rows="5" placeholder="Tell us about your logistics needs..." required></textarea>
       </div>
+    
       <button type="submit" class="btn-primary">Submit Request</button>
     </form>
+    
+    
   </div>
 </section>
 
@@ -147,6 +161,19 @@
   };
   window.addEventListener('scroll', animateOnScroll);
   window.addEventListener('load', animateOnScroll);
+
+  
+  document.querySelector("form").addEventListener("submit", function (e) {
+    const email = document.getElementById("email").value;
+    if (!email.includes("@")) {
+      alert("Please enter a valid email address.");
+      e.preventDefault();
+    }
+  });
+
+
+  
+
 </script>
 
 </body>

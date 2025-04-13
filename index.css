@@ -5,11 +5,28 @@
   box-sizing: border-box;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  overscroll-behavior: none;
+}
+
+
+
 body {
   font-family: 'Segoe UI', sans-serif;
   background: #f5f7fa;
   color: #222;
   line-height: 1.6;
+  overflow-x: hidden;
+  
+  
+  
 }
 
 a {
@@ -40,6 +57,9 @@ button {
 .navbar {
   background-color: #002b45;
   padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .nav-container {
@@ -107,6 +127,8 @@ button {
   z-index: 1;
 }
 
+
+
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -122,6 +144,10 @@ button {
   color: white;
   padding: 2rem;
 }
+
+
+
+
 
 .hero-content h2 {
   font-size: 2.5rem;
@@ -161,6 +187,15 @@ button {
 }
 /* Responsive */
 @media (max-width: 768px) {
+  .navbar {
+    background-color: #002b45;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    
+  }
+  
   .hero-content h2 {
     font-size: 1.8rem;
   }
@@ -274,6 +309,7 @@ button {
   padding: 3rem 1.5rem;
   text-align: center;
 }
+
 
 .cta .btn-outline {
   margin-top: 1rem;

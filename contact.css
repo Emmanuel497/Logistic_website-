@@ -6,11 +6,27 @@
   box-sizing: border-box;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  overscroll-behavior: none;
+}
+
+
+
+
 body {
   font-family: 'Segoe UI', sans-serif;
   background: #f5f7fa;
   color: #222;
   line-height: 1.6;
+  overflow-x: hidden;
+
 }
 a, .hamburger, .hamburger.active:focus,
 button:focus,
@@ -39,7 +55,11 @@ a {
 .navbar {
   background-color: #002b45;
   padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
+
 
 .nav-container {
   display: flex;
