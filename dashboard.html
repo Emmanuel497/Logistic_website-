@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Client Dashboard - LogiPro Logistics</title>
+  <link rel="stylesheet" href="client-portal.css" />
+</head>
+<body>
+  <nav>
+    <div class="logo">LogiPro</div>
+    <div class="hamburger" id="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="client-portal.html">Logout</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h1>Welcome Back!</h1>
+    <p>Access your logistics dashboard. Track shipments and download your reports.</p>
+  </section>
+
+  <section class="portal-container">
+    <h2>Your Dashboard</h2>
+
+    <!-- Track Shipment Form -->
+  <!-- Track Shipment Form -->
+<div class="form-group">
+    <label for="tracking-id">Track Your Shipment</label>
+    <input type="text" id="tracking-id" placeholder="Enter Tracking ID">
+    <button id="track-btn" style="margin-top: 1rem;">Track Shipment</button>
+  </div>
+  
+  <!-- Shipment Results Display Section -->
+  <div id="shipment-result" style="display:none; margin-top: 2rem; border: 1px solid #ccc; padding: 1rem; border-radius: 8px; background-color: #f9f9f9;">
+    <h3 style="color:#072e53; margin-bottom: 1rem;">Shipment Details</h3>
+    <p><strong>Tracking ID:</strong> <span id="res-tracking-id"></span></p>
+    <p><strong>Status:</strong> <span id="res-status"></span></p>
+    <p><strong>Origin:</strong> <span id="res-origin"></span></p>
+    <p><strong>Destination:</strong> <span id="res-destination"></span></p>
+    <p><strong>Estimated Delivery:</strong> <span id="res-delivery"></span></p>
+  </div>
+  
+
+    <!-- Download Reports -->
+    <div class="form-group" style="margin-top: 2rem;">
+      <label for="report">Download Your Reports</label><br/>
+      <button id="download-report">Download Report</button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 LogiPro Logistics. All rights reserved.
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      hamburger.classList.toggle('active');
+    });
+
+    // Simulated backend response
+    const sampleShipment = {
+      trackingId: "LOGI123456",
+      status: "In Transit",
+      origin: "Lagos, Nigeria",
+      destination: "Accra, Ghana",
+      estimatedDelivery: "April 18, 2025"
+    };
+
+    document.getElementById('track-btn').addEventListener('click', () => {
+      const inputId = document.getElementById('tracking-id').value.trim();
+      if (inputId === "") {
+        alert("Please enter a tracking ID.");
+        return;
+      }
+
+      // Simulate API result
+      document.getElementById('shipment-result').style.display = "block";
+      document.getElementById('res-tracking-id').textContent = inputId;
+      document.getElementById('res-status').textContent = sampleShipment.status;
+      document.getElementById('res-origin').textContent = sampleShipment.origin;
+      document.getElementById('res-destination').textContent = sampleShipment.destination;
+      document.getElementById('res-delivery').textContent = sampleShipment.estimatedDelivery;
+    });
+
+    document.getElementById('download-report').addEventListener('click', () => {
+  window.location.href = '/download-report';
+});
+
+
+
+
+
+    
+    
+  const trackBtn = document.getElementById('track-btn');
+
+  trackBtn.addEventListener('click', async () => {
+    const trackingNumber = document.getElementById('tracking-id').value.trim();
+
+    if (!trackingNumber) {
+      alert("Please enter a tracking number.");
+      return;
+    }
+
+    try {
+      const res = await fetch('/track-shipment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ trackingNumber })
+      });
+
+      const data = await res.json();
+
+      // Show the shipment result section
+      document.getElementById('shipment-result').style.display = 'block';
+      document.getElementById('res-tracking-id').textContent = data.trackingNumber;
+      document.getElementById('res-status').textContent = data.status;
+      document.getElementById('res-origin').textContent = data.origin;
+      document.getElementById('res-destination').textContent = data.destination;
+      document.getElementById('res-delivery').textContent = data.estimatedDelivery;
+
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong while fetching shipment data.");
+    }
+  });
+
+
+
+  </script>
+</body>
+</html>

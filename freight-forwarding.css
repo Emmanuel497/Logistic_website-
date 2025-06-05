@@ -1,0 +1,162 @@
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #222;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+  }
+  
+  a {
+    color: #0056b3;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  /* Header */
+  .header {
+    background: #0f1f3d;
+    color: white;
+    padding: 1rem 0;
+  }
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .nav a {
+    color: white;
+    font-weight: 500;
+  }
+  
+  /* Hero Section */
+  .hero-small {
+    background-color: #dde8f1;
+    padding: 4rem 0;
+    text-align: center;
+  }
+  .hero-small h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .hero-small p {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  .freight-bg {
+    background-image: url('../images/freight-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+  }
+  
+  /* Service Details */
+  .service-details h2,
+  .service-details h3 {
+    color: #0f1f3d;
+  }
+  .service-details ul.benefits {
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0;
+  }
+  .service-details ul.benefits li {
+    background: #e6f0fb;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-left: 4px solid #0073e6;
+    border-radius: 4px;
+  }
+  
+  .service-details ol.steps {
+    padding-left: 1.2rem;
+    margin-top: 1rem;
+  }
+  .service-details ol.steps li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Testimonials */
+  .testimonial {
+    background: #fff;
+    border-left: 5px solid #0073e6;
+    padding: 1rem 1.5rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+    font-style: italic;
+    color: #444;
+  }
+  .testimonial cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: normal;
+    color: #0073e6;
+  }
+  
+  /* FAQ Section */
+  .faq strong {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #0f1f3d;
+  }
+  .faq p {
+    margin-top: 0.25rem;
+    color: #444;
+  }
+  
+  /* CTA Buttons */
+  .btn-primary,
+  .btn-secondary {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    font-weight: 600;
+    border-radius: 6px;
+    text-align: center;
+    transition: background 0.3s ease;
+  }
+  .btn-primary {
+    background: #0073e6;
+    color: white;
+  }
+  .btn-primary:hover {
+    background: #005bb5;
+  }
+  .btn-secondary {
+    background: #e6f0fb;
+    color: #0073e6;
+  }
+  .btn-secondary:hover {
+    background: #cddff4;
+  }
+  
+  .cta.center {
+    text-align: center;
+  }
+  
+  /* Footer */
+  .footer {
+    background: #0f1f3d;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+  }
+  
