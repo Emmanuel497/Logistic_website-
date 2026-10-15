@@ -44,12 +44,38 @@
           <p><strong>Hours:</strong> Mon–Fri, 9am–6pm</p>
           <p><strong>Address:</strong> 123 Logistics Way, Transport City, TX</p>
         </div>
-        <form class="contact-form" action="#" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-          <button type="submit" class="btn-primary">Send Message</button>
-        </form>
+
+       
+<form class="contact-form" id="contact-form">
+  <input
+    type="text"
+    id="name"
+    name="name"
+    placeholder="Your Name"
+    required
+  />
+
+  <input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="Your Email"
+    required
+  />
+
+  <textarea
+    id="message"
+    name="message"
+    rows="5"
+    placeholder="Your Message"
+    required
+  ></textarea>
+
+  <button type="submit" class="btn-primary">Send Message</button>
+
+  <p id="form-status" role="status" aria-live="polite"></p>
+</form>
+
       </div>
     </div>
   </section>
@@ -64,7 +90,57 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 LogiPro Logistics. All rights reserved.</p>
+      <p>&copy; 2025 AEON Web studio. All rights reserved.</p>
+       
+<p class="footer-email">
+  <svg xmlns="http://www.w3.org/2000/svg"
+       width="15"
+       height="15"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="currentColor"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round">
+    <rect x="3" y="5" width="18" height="14" rx="2"/>
+    <path d="m3 7 9 6 9-6"/>
+  </svg>
+  <a href="#">
+    aeonwebstudio@gmail.com
+  </a>
+</p>
+
+
+<!-- Phone Numbers -->
+<p class="footer-phone">
+  <svg xmlns="http://www.w3.org/2000/svg"
+       width="15"
+       height="15"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="currentColor"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+      19.79 19.79 0 0 1-8.63-3.07
+      19.5 19.5 0 0 1-6-6
+      19.79 19.79 0 0 1-3.07-8.67
+      A2 2 0 0 1 4.11 2h3
+      a2 2 0 0 1 2 1.72
+      c.12.96.36 1.9.72 2.8
+      a2 2 0 0 1-.45 2.11L8.11 9.91
+      a16 16 0 0 0 6 6l1.27-1.27
+      a2 2 0 0 1 2.11-.45
+      c.9.36 1.84.6 2.8.72
+      A2 2 0 0 1 22 16.92z"/>
+  </svg>
+
+  <a href="tel:+2348022116777">+2348022116777</a>
+  <span>|</span>
+  <a href="tel:+2347042343654">+2347042343654</a>
+</p>
+
     </div>
   </footer>
 
@@ -76,6 +152,26 @@
       navMenu.classList.toggle('open');
       hamburger.classList.toggle('active');
     });
+    
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+contactForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  if (!contactForm.checkValidity()) {
+    contactForm.reportValidity();
+    return;
+  }
+
+  formStatus.textContent =
+    'Thank you! Your message has been submitted successfully.';
+
+  formStatus.style.color = '#187a36';
+
+  contactForm.reset();
+});
+
   </script>
 
 </body>

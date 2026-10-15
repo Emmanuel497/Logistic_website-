@@ -164,6 +164,30 @@
     color: white;
     margin-top: 4rem;
   }
+
+  .footer-email {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: 5px 0 0;
+  line-height: 1;
+}
+
+.footer-email svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.footer-email a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* .footer-email a:hover {
+  text-decoration: underline;
+} */
+
   
   @media screen and (max-width: 600px) {
     nav ul {

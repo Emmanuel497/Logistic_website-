@@ -178,6 +178,29 @@ a {
   padding: 1.5rem 0;
   font-size: 0.9rem;
 }
+.footer-email {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: 5px 0 0;
+  line-height: 1;
+}
+
+.footer-email svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.footer-email a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* .footer-email a:hover {
+  text-decoration: underline;
+} */
+
 
 /* Responsive Nav */
 .hamburger {
@@ -195,6 +218,14 @@ a {
   border-radius: 2px;
   transition: 0.3s ease;
 }
+
+
+#form-status {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
 
 @media (max-width: 768px) {
   .nav-container {
